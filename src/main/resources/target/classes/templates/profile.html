@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>ordered</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* nav {
+        margin-top: 1.3em;
+      } */
+      #navbarNav {
+        margin-left: 55em;
+      }
+      footer {
+        margin-top: 19.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- boot navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/undraw_handcrafts_planet.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+           DailyShipping
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a  href="/userdashboard"
+                 class="btn btn-primary">Dashboard</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <div class="container-fluid " style=" margin-top: 3em;">
+        <div
+          class="container  card text-center fs-3 pt-5 ps-5 dvi mb-5 mt-5 ms-5 shadow-sm align-items-center justify-content-center"
+          style="width: 30rem;"
+          th:each="user: ${user}"
+          
+          
+        >
+        
+        <!--<div th:each="product: ${products}">-->
+          <div  ><img th:src="${user.fileName}" width="200" height="200" controls  
+            style="border-radius: 100%;"/></div>
+          <br />
+          <!-- <div class="fs-5 text-start" th:text="'ID '+${user.id}" id="desc"></div> -->
+          <div class="fs-5 border-bottom" th:text="'Firstname :'+${user.firstname}" id="desc-name"></div>
+          <div class="fs-5 border-bottom" th:text="'Lastname  :'+${user.lastname}" id="desc-name"></div>
+          <div class="fs-5" th:text="'Companyname :'+${user.Companyname}" id="desc-name"></div>
+          <a
+                th:href="@{/profile/edit/{id}(id=${user.id})}"
+                
+                > <button class="btn btn-primary btn-sm">edit profile</button></a
+              >
+          <!--<div  ><img th:src="${products.products.fileName}" width="100" height="100" controls /></div>
+          
+        </div>-->
+      
+      </div>
+      </div>
+    
+    
+ <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

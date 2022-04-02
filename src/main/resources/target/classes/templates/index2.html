@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Tha Shipping Deal</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/undraw_handcrafts_planet.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+          The Shipping Deal
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!--
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses">courses</a>
+            </li>
+            -->
+            <li class="nav-item">
+              <a class="nav-link" href="signup_1"
+                ><button type="submit" class="btn btn-primary">
+                  Register
+                </button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container text-center">
+      <h1>Welcome to Daily code</h1>
+    </div>
+    <div class="container">
+      <div class="row row align-items-center">
+        <div class="col-lg-6">
+          <h5 class="mt-3">
+            The right place to develop skills and see thing in different way
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
+            velit.
+
+            <p class="lead text-secondary my-5">
+              “Education is the most powerful weapon which you can use to change
+              the world” - Nelson Mandela
+            </p>
+          </h5>
+          <a class="link" href="apply"
+            ><button type="submit" class="btn btn-primary">Apply</button></a
+          >
+        </div>
+        <div class="col">
+          <img th:src="@{/images/home-hero.svg}" width="400" height="300" />
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <h4>About</h4>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et dolores
+        minus deserunt velit, hic totam suscipit. Minus suscipit provident eaque
+        corrupti voluptate eligendi accusantium enim nobis officia hic. Dolorem,
+        ut! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+        quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+        perferendis?
+      </p>
+    </div>
+    <!-- courses card -->
+    <section class="why-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h2 class="mt-5 text-center">courses</h2>
+            <p class="mb-5 text-center">
+              Why choose us section design HTML is created by using Bootstrap
+              and custom HTML CSS. This our services section cards are more
+              beautiful with pure CSS hover effects.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>01</span> -->
+              <h4><a href="#">Why Lorem Ipsum</a></h4>
+              <p>
+                There are many variations of passages of available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/css.jpeg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>02</span> -->
+              <h4><a href="#">Why do we use it</a></h4>
+              <p>
+                There are many variations of Lorem Ipsum available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/react.jpeg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>03</span> -->
+              <h4><a href="#">Can I get some</a></h4>
+              <p>
+                There are many variations of Lorem Ipsum available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/flutter.jpeg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>04</span> -->
+              <h4><a href="#">Why Lorem Ipsum</a></h4>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                the majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/html.jpeg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>05</span> -->
+              <h4><a href="#">Why do we use it</a></h4>
+              <p>
+                There are many of passages of Lorem Ipsum available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/nodejs.jpg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>06</span> -->
+              <h4><a href="#">Can I get some</a></h4>
+              <p>
+                There are variations of passages of Lorem Ipsum available, but
+                the majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/spring.jpeg}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- teamssssss -->
+    <section class="our-team">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Our Team Section</h2>
+            <p>
+              Bootstrap 4 our team section source code we can use it for our
+              clients, customers, testimonials, and any types of the section
+              where we want to describe our people who are working with us
+            </p>
+          </div>
+        </div>
+        <hr class="mb-5 mt-4" />
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/mine1.jpg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Feven Tolla</h4>
+                  <span>Web developer</span>
+                </div>
+                <div class="social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/tge.jpg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Tigist wondimenh</h4>
+                  <span>Web Developer</span>
+                </div>
+                <div class="social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/puppy.jpg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Mekdes Kebede</h4>
+                  <span>frontend developer</span>
+                </div>
+                <div class="social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/tg.jpg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Tigist Zelalem</h4>
+                  <span>web designer</span>
+                </div>
+                <div class="social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-5" />
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

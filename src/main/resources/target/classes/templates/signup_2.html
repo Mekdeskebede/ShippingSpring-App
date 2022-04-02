@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>signup_2</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- <div class="container">
+      <h1>Add course by the Admin</h1>
+      </div> -->
+       <!-- <div>
+        <form
+      th:action="@{/admin}"
+      method="post"
+      style="max-width: 550px; margin: 0 auto"
+      th:object="${courses}" enctype="multipart/form-data"
+    > -->
+      <!-- <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+      </div>  -->
+<!-- 
+       <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">title</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              th:field="${courses.title}"
+              required="required"
+              
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">description</label>
+
+          <div> -->
+            <!-- <input
+              type="text"
+              class="form-control"
+              th:field="${courses.description}"
+              required="required"
+              minlength="3"
+              maxlength="20"
+              
+            /> -->
+            <!-- <textarea name="desc" 
+            class="form-control"
+            th:field="${courses.description}"
+            required="required"
+            cols="20" rows="4"
+             ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">instructur</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              th:field="${courses.instructur}"
+              required="required"
+              minlength="3"
+              maxlength="50"
+              
+            />
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-file mb-1">
+        <input type="file" name="file" accept="*" id="file" class="custom-file-input">
+        <label class="custom-file-label" for="file">file</label>
+    </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary">Add course</button>
+      </div>
+  </form>   -->
+
+  <form
+      th:action="@{/}"
+      method="post"
+      style="max-width: 700px; margin: 0 auto"
+      th:object="${address}"
+      >
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+      </div>
+      <section class="">
+        <div class="container mt-3">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card text-black shadow-lg bg-white" style="border-radius: 25px;">
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-12 col-xl-8 order-2 order-lg-1">
+                      <p class="text-center fw-bold fs-4 mt-3 bg-light">finish your registration</p>                   
+                              <div >
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">Country</label>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        th:field="${address.country}"
+                                        required="required"
+                                        style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                        
+                                      />
+                                    </div>
+                                  </div>
+                                
+                          
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">City</label>
+                          
+                                    <div> 
+                                      <input
+                                      type="text"
+                                      class="form-control"
+                                      th:field="${address.city}"
+                                      required="required"
+                                      style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                      
+                                    />
+                                    </div>
+                                  </div>
+                                </div>
+
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">Street number</label>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        th:field="${address.streetnumber}"
+                                        required="required"
+                                        minlength="3"
+                                        maxlength="50"
+                                        style="border: 1.5px solid rgba(207, 207, 252, 0.418);"/>     
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">zipcode</label>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        th:field="${address.zipcode}"
+                                        required="required"
+                                        minlength="3"
+                                        maxlength="50"
+                                        style="border: 1.5px solid rgba(207, 207, 252, 0.418);"/>     
+                                    </div>
+                                  </div>
+                               
+                          
+                                <!--<div class="custom-file mb-1">
+                                  <input type="file" name="file" accept="*" id="file" class="custom-file-input">
+                                  <label class="custom-file-label" for="file" style="border: 1.5px solid rgba(207, 207, 252, 0.418);">file</label>
+                              </div>-->
+                          
+                                <div>
+                                  <button type="submit" class="btn btn-primary">submit</button>
+                                </div>
+      
+                      </form>
+      
+                    </div>
+  
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

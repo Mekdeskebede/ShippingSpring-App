@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>register</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- <div class="container">
+      <h1>Feel free to be our member</h1>
+    </div> -->
+
+    <!-- <form
+      th:action="@{/courses}"
+      method="post"
+      style="max-width: 600px; margin: 0 auto"
+      th:object="${user}"
+    >
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">email</label>
+          <div>
+            <input
+              type="email"
+              class="form-control"
+              th:field="${user.email}"
+              required="required"
+              th:errorclass="is-invalid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">firstname</label>
+
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              th:field="${user.firstname}"
+              required="required"
+              minlength="3"
+              maxlength="20"
+              th:errorclass="is-invalid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">lastname</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              th:field="${user.lastname}"
+              required="required"
+              minlength="3"
+              maxlength="20"
+              th:errorclass="is-invalid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-form-label col-4">password</label>
+          <div>
+            <input
+              type="password"
+              class="form-control"
+              th:field="${user.password}"
+              required="required"
+              minlength="3"
+              maxlength="10"
+              th:errorclass="is-invalid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p>Already have an account <a th:href="@{/login}">LOGIN</a></p>
+      </div>
+    </form> -->
+
+    <form
+      th:action="@{/signup_2}"
+      method="post"
+      style="max-width: 650px; margin: 0 auto"
+      th:object="${user}"
+      enctype="multipart/form-data"
+    >
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+      </div>
+      <section class="">
+        <div class="container mt-3">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card text-black shadow-lg bg-white" style="border-radius: 25px;">
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-12 col-xl-8 order-2 order-lg-1">
+                      <p class="text-center fw-bold fs-4 mt-3 bg-light">Create Your Account</p>                   
+                              <div >
+                              <div class="form-group row p-3">
+                                <label class="col-form-label col-lg-12">Email</label>
+                                <div>
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    th:field="${user.email}"
+                                    required="required"
+                                    th:errorclass="is-invalid"
+                                    style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div >
+                            <div class="form-group row p-3">
+                              <label class="col-form-label col-lg-12">First Name</label>            
+                              <div>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  th:field="${user.firstname}"
+                                  required="required"
+                                  minlength="3"
+                                  maxlength="20"
+                                  th:errorclass="is-invalid"
+                                  style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                />
+                              </div>
+                            </div>
+                          </div>
+      
+                          <div >
+                            <div class="form-group row p-3">
+                              <label class="col-form-label col-lg-12">Last Name</label>            
+                              <div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    th:field="${user.lastname}"
+                                    required="required"
+                                    minlength="3"
+                                    maxlength="20"
+                                    th:errorclass="is-invalid"
+                                    style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                  />
+                              </div>
+                            </div>
+                          </div>
+      
+                          <div >
+                            <div class="form-group row p-3">
+                              <label class="col-form-label col-lg-12">Password</label>            
+                              <div>
+                                <input
+                                type="password"
+                                class="form-control"
+                                th:field="${user.password}"
+                                required="required"
+                                minlength="3"
+                                maxlength="10"
+                                th:errorclass="is-invalid"
+                                style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                              />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div >
+                            <div class="form-group row p-3">
+                              <label class="col-form-label col-lg-12">Company Name</label>            
+                              <div>
+                                <input
+                                type="text"
+                                class="form-control"
+                                th:field="${user.Companyname}"
+                                required="required"
+                                minlength="3"
+                                maxlength="10"
+                                th:errorclass="is-invalid"
+                                style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                              />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-field col-lg-12">
+                            <input 
+                            type="file" 
+                            class="input-text js-input" 
+                            id="file" 
+                            name="file" 
+                            required="required"
+                            />
+                            <label class="label" for="content"></label>
+                            <p id="error_name"></p>
+                          </div>
+                            
+                          
+                          <div>
+                            <button type="submit" class="btn btn-primary">Next</button>
+                            <p>Already have an account <a th:href="@{/login}">LOGIN</a></p>
+                          </div>
+      
+                      </form>
+      
+                    </div>
+
+              
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>userproduct detail</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+  </head>
+
+  <style>
+    #content {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    img {
+      border-radius: 2em;
+      margin-bottom: 1em;
+    }
+    nav {
+      margin-top: 1.3em;
+    }
+    #navbarSupportedContent {
+      margin-left: 44em;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
+      <div class="container-fluid">
+        <a class="navbar-brand ext-dark fw-bold" href="/">
+          <img
+            th:src="@{/images/undraw_handcrafts_planet.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top t"
+          />
+          DailyShipping
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-dark fs-5" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold  text-dark fs-5" href="courses">products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold  text-dark  fs-5" href="userdashboard"
+                >
+                  Dashboard
+                </a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5" th:each="product: ${products}">
+      <div class="row">
+      <div class=" col-sm-6 col-md-6">
+        <img class="mx-5" th:src="${product.fileName}" width="400" height="300" controls />
+      </div>
+    
+
+      <div class=" col-sm-6 col-md-6 mt-5">
+        <h3 class="mt-5" th:text="${product.productName}"></h3>
+        <h5  class="fs-4 p-1 mt-1"th:text="'Maximum Number of Products  :'+${product.maxNumberofproduct}"></h5>
+        <h6  class="fs-4"th:text="'Minimum Number of Pallets   :'+ ${product.minNumberofpallet}"></h6>
+          <hr />
+          <a
+                th:href="@{/addtocart/{id}(id=${product.id})}"
+                class="btn btn-primary"
+                >Add to cart</a
+              >
+      </div>
+    </div>
+    
+    </div>
+
+
+
+    <footer class="bg-dark text-center text-white mt-5 " >
+      <div class="container p-4 pb-0" style="margin-top: 220px;">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">DailyShipping.com</a>
+      </div>
+      
+    </footer>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>
+

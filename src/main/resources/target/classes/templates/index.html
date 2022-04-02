@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Tha Shipping Deal</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light m-0 bg-light">
+      <div class="container-fluid">
+        
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/undraw_handcrafts_planet.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+         DailyShipping
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 10em;">
+            <li class="nav-item">
+              <a class="nav-link" href="signup_1"
+                ><button type="submit" class="btn btn-primary">
+                  Register
+                </button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login"> <button type="submit" class="btn btn-primary">Login</button> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container text-center">
+      <h1>Welcome to DailyShipping</h1>
+    </div>
+    <div class="container">
+      <div class="row row align-items-center">
+        <div class="col-lg-6">
+          <h5 class="mt-3">
+            The best place to order the worlds top latest and original products ,
+             we are here to deliver your products where ever you wanted with a fairly price.
+
+            <p class="lead text-secondary my-5">
+              “The interests of our customers are always top priority for us“
+            </p>
+          </h5>
+          <a class="link" href="apply"
+            ><button type="submit" class="btn btn-primary">Apply</button></a
+          >
+        </div>
+        <div class="col">
+          <img th:src="@{/images/deliveries.svg}" width="400" height="300" />
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <h4>About</h4>
+      <p>
+        We aim to offer our customers a variety of the latest Products and deliver those products for our customer,whereever he or she lives. 
+        We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products 
+        .We offer all of this while providing excellent customer service and friendly support.
+      </p>
+    </div>
+    <!-- courses card -->
+    <section class="why-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h2 class="mt-5 text-center">Products</h2>
+            <p class="mb-5 text-center">
+              we have a list of product below.You can go and see the datails.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>01</span> -->
+              <h4><a href="#">Cars</a></h4>
+              <p>
+                There are many variations of passages of available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/car.svg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>02</span> -->
+              <h4><a href="#">mobile phones</a></h4>
+              <p>
+                There are many variations of Lorem Ipsum available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/phone.svg}" alt="" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>03</span> -->
+              <h4><a href="#">Laptops</a></h4>
+              <p>
+                There are many variations of Lorem Ipsum available, but the
+                majority have suffered alteration in some form
+              </p>
+              <img th:src="@{/images/pc.svg}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <!-- footer -->
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

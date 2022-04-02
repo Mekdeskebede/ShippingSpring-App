@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ordered</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/courses.css}" />
+    <!-- <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <style>
+         #navbarSupportedContent {
+        margin-left: 6em;
+      }
+    
+        footer {
+            margin-top: 19.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img th:src="@{/images/undraw_handcrafts_planet.svg}" alt="" width="70" height="50"
+                    class="d-inline-block align-text-top" />
+                Daily Shipping
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/product_list}">[[#{nav.home}]]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/users_list}">[[#{nav.users}]]</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/shipping_list}">[[#{nav.shippingproviders}]]</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/allorders}">[[#{nav.orders}]]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/profileAdmin}">[[#{nav.profile}]]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page"
+                            th:href="@{/addwarehouse}">[[#{warehouse}]]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" aria-current="page" href="/logout">[[#{nav.logout}]]</a>
+                    </li>
+                    <li class="mt-2 "><span class=""><span> [[#{language.change}]]</span>
+                            <select id="locales">
+                                <option value=""></option>
+                                <option value="en"> [[#{lang.eng}]]</option>
+                                <option value="de">[[#{lang.de}]]</option>
+                            </select></li>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+<div class="container-fluid bg-white " style=" margin-top: 3em;">
+    <div class=" col-sm-6 text-center fs-3 pt-5 ps-5 dvi  mt-5 ms-5  align-items-center justify-content-center"
+        style="width: 65rem;" th:each="user: ${user}">
+        <div class="row ">
+            <div class="col-sm-6"><img th:src="${user.fileName}" width="370" height="370" controls
+                    style="border-radius: 100%;" /></div>
+            <br />
+
+            <div class="col-sm-6 mt-5 text-start">
+                <div class="fs-5 border-bottom bg-white mt-3" style="color: #000;"
+                    th:text="'Firstname :'+${user.firstname}" id="desc-name"></div>
+                <div class="fs-5 border-bottom bg-white mt-3" style="color: #000;"
+                    th:text="'Lastname  :'+${user.lastname}" id="desc-name"></div>
+                <div class="fs-5 border-bottom bg-white mt-3" style="color: #000;" th:text="'Email  :'+${user.email}"
+                    id="desc-name"></div>
+                <div class="fs-5  bg-white mt-3" style="color: #000;" th:text="'Companyname :'+${user.companyname}"
+                    id="desc-name"></div>
+                <a th:href="@{/profile/edit/{id}(id=${user.id})}"> <button
+                        class="btn btn-primary btn-sm mt-3">[[#{editprofile}]]</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+        <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-twitter"></i></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-google"></i></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-linkedin-in"></i></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-github"></i></a>
+        </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+    </div>
+</footer>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            if (selectedOption != '') {
+                window.location.replace('?lang=' + selectedOption);
+            }
+        });
+    });
+</script>
+
+</html>
