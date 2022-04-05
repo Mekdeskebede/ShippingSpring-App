@@ -1,25 +1,25 @@
 package com.bootcamp.deliver.Controller;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+// import java.util.Optional;
 
 import javax.validation.Valid;
 
 import com.bootcamp.deliver.Model.DeliveryAddress;
-import com.bootcamp.deliver.Model.GeoLocation;
+// import com.bootcamp.deliver.Model.GeoLocation;
 import com.bootcamp.deliver.Model.Order;
 import com.bootcamp.deliver.Model.Product;
-import com.bootcamp.deliver.Model.Package;
-import com.bootcamp.deliver.Model.ProductOrder;
+import com.bootcamp.deliver.Model.Cart_Item;
+import com.bootcamp.deliver.Model.Shipping_Cart;
 import com.bootcamp.deliver.Model.ShippingProvider;
 import com.bootcamp.deliver.Model.User;
 import com.bootcamp.deliver.Model.warehouse;
 import com.bootcamp.deliver.Repository.DeliveryAddressRepository;
 import com.bootcamp.deliver.Repository.OrderRepository;
-import com.bootcamp.deliver.Repository.PackageRepository;
+import com.bootcamp.deliver.Repository.Cart_ItemRepository;
 // import com.bootcamp.deliver.Repository.OrderDetailRepository;
-import com.bootcamp.deliver.Repository.ProductOrderRepository;
+import com.bootcamp.deliver.Repository.Shipping_CartRepository;
 import com.bootcamp.deliver.Repository.ProductRepository;
 import com.bootcamp.deliver.Repository.ShippingProvidersRepository;
 import com.bootcamp.deliver.Repository.UserRepository;
@@ -43,16 +43,16 @@ import org.springframework.web.bind.support.SessionStatus;
 public class OrderController {
 
   @Autowired
-  private ProductOrderRepository prodOrderRepo;
+  private Shipping_CartRepository prodOrderRepo;
 
   @Autowired
-  private PackageRepository packRepo;
+  private Cart_ItemRepository packRepo;
 
   @Autowired
   private DeliveryAddressRepository deliaddrepo;
 
-  @Autowired
-  private ProductRepository productRepo;
+  // @Autowired
+  // private ProductRepository productRepo;
 
   @Autowired
   private ShippingProvidersRepository shipRepo;
@@ -111,7 +111,7 @@ String currentPrincipalName = authentication.getName();
 User euser = repo.findByEmail(currentPrincipalName);
 Long userid = euser.getId();
 // List<Package> cart = packRepo.findPackageById(euser.getId());
-List<Package> cart = packRepo.findAll();
+List<Cart_Item> cart = packRepo.findAll();
 
 //  get all the shipping providers
 
@@ -120,7 +120,7 @@ List<ShippingProvider> shippingprovider = shipRepo.findAll();
 //  Calculate the overall pallet needed based on the number of product and maximum product given
 Double AllPallet = 0.0;
 
-for(Package ct: cart){
+for(Cart_Item ct: cart){
 
 if(euser == ct.getUser() ){
     Double numofprod = (double) ct.getNumofprod();
@@ -154,7 +154,7 @@ for (ShippingProvider sp: shippingprovider){
            price = initialPrice + (AllPallet * RatePerPallet) + (distance * RatePerKilo);
 
          }
-        ProductOrder order = new ProductOrder();
+        Shipping_Cart order = new Shipping_Cart();
 
         order.setUser(euser);
         order.setShippingprovider(sp);
@@ -167,7 +167,7 @@ for (ShippingProvider sp: shippingprovider){
 
   @GetMapping("/price")
   public String Pricedisplay (Model model) {
-    List<ProductOrder> productorder = prodOrderRepo.findAll();
+    List<Shipping_Cart> productorder = prodOrderRepo.findAll();
     List<ShippingProvider> shippingprovider = shipRepo.findAll();
 
     Order ordering = new Order();
@@ -184,7 +184,7 @@ for (ShippingProvider sp: shippingprovider){
     @PathVariable("id") long id,
     Model model
     ) {
-    ProductOrder prodorder = prodOrderRepo.findById(id)
+    Shipping_Cart prodorder = prodOrderRepo.findById(id)
         .orElseThrow(() -> new IllegalArgumentException("Invalid course Id:" + id));
 
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -202,9 +202,9 @@ for (ShippingProvider sp: shippingprovider){
       ordering.setShippingprovider(sp);
 
       orderrepo.save(ordering);
-      List <Package> pack = packRepo.findAll();
+      List <Cart_Item> pack = packRepo.findAll();
 
-      for(Package pk:pack){
+      for(Cart_Item pk:pack){
 
         if (pk.getUser() == euser){
             packRepo.delete(pk);
@@ -212,7 +212,7 @@ for (ShippingProvider sp: shippingprovider){
       }
       prodOrderRepo.deleteAll();
 
-    return "redirect:/userproduct_list";
+    return "redirect:/myorders";
   }
 
   @GetMapping("/allorders")

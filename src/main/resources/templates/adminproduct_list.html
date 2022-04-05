@@ -24,7 +24,7 @@
 
     <style>
       #navbarSupportedContent {
-        margin-left: 5em;
+        margin-left: 16em;
       }
     </style>
   </head>
@@ -33,7 +33,7 @@
     <!-- boot navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/product_list">
           <img
             th:src="@{/images/undraw_handcrafts_planet.svg}"
             alt=""
@@ -68,12 +68,9 @@
               <a class="nav-link text-dark fw-bold" aria-current="page" th:href="@{/profileAdmin}">[[#{nav.profile}]]</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark fw-bold" aria-current="page" th:href="@{/addwarehouse}">[[#{warehouse}]]</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-dark fw-bold" aria-current="page"  href="/logout">[[#{nav.logout}]]</a>
             </li>
-            <li class="mt-2 "><span class=""><span> [[#{language.change}]]</span>
+            <li class="mt-2 ms-3"><span class=""><span></span>
               <select id="locales">
                 <option value=""></option>
                 <option value="en"> [[#{lang.eng}]]</option>
@@ -84,7 +81,7 @@
         </div>
       </div>
     </nav>
-
+    
 
     <div class="container text-center">
       <h1>[[#{access}]]</h1>
@@ -124,8 +121,24 @@
                 class="btn btn-danger mt-2"
                 >[[#{delete}]]</a>
     </div>
-  </div>
+  
+    
+
+
+    <div class=" float-end">
+    <button class="btn btn-primary text-white float-end"><a class="nav-link text-dark fw-bold text-white" aria-current="page" th:href="@{/addwarehouse}">[[#{warehouse}]]</a>
+    </button> 
+    <div class="alert float-end">
+      <span class="closebtn" onClick="this.parentElement.style.display = 'none';">
+        &times;
+      </span>
+      you have already added a ware house
     </div>
+  </div>
+</div>
+ 
+
+
     <footer class="bg-dark text-center text-white">
       <div class="container p-4 pb-0">
         <section class="mb-4">
@@ -175,7 +188,7 @@
 
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2022 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">DailyShipping.com</a>
+        <a class="text-white" href="#">DailyShipping.com</a>
       </div>
     </footer>
 

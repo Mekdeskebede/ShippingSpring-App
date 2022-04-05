@@ -16,7 +16,7 @@
     
     <style>
          #navbarSupportedContent {
-        margin-left: 6em;
+        margin-left: 17.5em;
       }
     
         footer {
@@ -29,9 +29,14 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img th:src="@{/images/undraw_handcrafts_planet.svg}" alt="" width="70" height="50"
-                    class="d-inline-block align-text-top" />
+          <a class="navbar-brand" href="/product_list">
+            <img
+              th:src="@{/images/undraw_handcrafts_planet.svg}"
+              alt=""
+              width="70"
+              height="50"
+              class="d-inline-block align-text-top"
+            />
                 Daily Shipping
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -63,14 +68,11 @@
                         <a class="nav-link text-dark fw-bold" aria-current="page"
                             th:href="@{/profileAdmin}">[[#{nav.profile}]]</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark fw-bold" aria-current="page"
-                            th:href="@{/addwarehouse}">[[#{warehouse}]]</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link text-dark fw-bold" aria-current="page" href="/logout">[[#{nav.logout}]]</a>
                     </li>
-                    <li class="mt-2 "><span class=""><span> [[#{language.change}]]</span>
+                    <li class="mt-2 "><span class=""><span></span>
                             <select id="locales">
                                 <option value=""></option>
                                 <option value="en"> [[#{lang.eng}]]</option>
@@ -133,7 +135,7 @@
 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2022 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+        <a class="text-white" href="#">Dailycode.com</a>
     </div>
 </footer>
 

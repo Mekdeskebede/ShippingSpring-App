@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
-public class ProductOrder implements Serializable {
+public class Shipping_Cart implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

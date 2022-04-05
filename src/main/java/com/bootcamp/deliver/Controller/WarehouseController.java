@@ -1,5 +1,7 @@
 package com.bootcamp.deliver.Controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import com.bootcamp.deliver.Model.warehouse;
@@ -19,11 +21,25 @@ public class WarehouseController {
     @Autowired
     private WareHouseRepository wareRepo;
 
-  @GetMapping("/addwarehouse") 
-  public String addwarehouse (Model model) {
-    model.addAttribute("warehouse",new warehouse());
-    return "addwarehouse";
-  } 
+  // @GetMapping("/addwarehouse") 
+  // public String addwarehouse (Model model) {
+  //   model.addAttribute("warehouse",new warehouse());
+  //   return "addwarehouse";
+  // } 
+
+  @GetMapping("/addwarehouse")
+  public String addwarehouse(Model model){
+    List<warehouse> ware =wareRepo.findAll();
+    if (ware.isEmpty()){
+      model.addAttribute("warehouse",new warehouse());
+     return "addwarehouse";
+    } else{
+      String str = "you have already added a ware house";
+      model.addAttribute("str",str);
+      return "redirect:/adminproduct_list";
+    }
+  }
+
   @PostMapping("/savewarehouse")
   public String savewarehouse(
       @Valid warehouse warehouse,

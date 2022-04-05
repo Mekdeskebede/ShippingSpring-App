@@ -10,12 +10,12 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.validation.Valid;
-import com.bootcamp.deliver.Model.Package;
+import com.bootcamp.deliver.Model.Cart_Item;
 import com.bootcamp.deliver.Model.Product;
-import com.bootcamp.deliver.Model.ProductOrder;
+import com.bootcamp.deliver.Model.Shipping_Cart;
 import com.bootcamp.deliver.Model.User;
-import com.bootcamp.deliver.Repository.PackageRepository;
-import com.bootcamp.deliver.Repository.ProductOrderRepository;
+import com.bootcamp.deliver.Repository.Cart_ItemRepository;
+import com.bootcamp.deliver.Repository.Shipping_CartRepository;
 import com.bootcamp.deliver.Repository.ProductRepository;
 import com.bootcamp.deliver.Repository.UserRepository;
 
@@ -55,13 +55,13 @@ public class Productcontroller {
   private ProductRepository productRepo;
 
   @Autowired
-  private PackageRepository packRepo;
+  private Cart_ItemRepository packRepo;
 
   @GetMapping("/userproduct_list")
   public String viewproductPage(Model model) {
     List<Product> products = productRepo.findAll();
     model.addAttribute("products", products);
-    model.addAttribute("cart", new Package());
+    model.addAttribute("cart", new Cart_Item());
     return "userproduct_list";
   }
 
@@ -132,7 +132,7 @@ public class Productcontroller {
     Product products = productRepo.findById(id)
         .orElseThrow(() -> new IllegalArgumentException("Invalid course Id:" + id));
     // long ids = products.getId();
-    Package cart = new Package();
+    Cart_Item cart = new Cart_Item();
     // cart.setProductid(ids);
     model.addAttribute("products", products);
     model.addAttribute("cart", cart);

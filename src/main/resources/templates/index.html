@@ -20,11 +20,16 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light m-0 bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
-        <img th:src="@{/images/undraw_handcrafts_planet.svg}" alt="" width="70" height="50"
-          class="d-inline-block align-text-top" />
+        <img
+          th:src="@{/images/undraw_handcrafts_planet.svg}"
+          alt=""
+          width="70"
+          height="50"
+          class="d-inline-block align-text-top"
+        />
         DailyShipping
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -43,7 +48,7 @@
               <button type="submit" class="btn btn-danger">[[#{nav.login}]]</button>
             </a>
           </li>
-          <li class="mt-2 "><span class=""><span> [[#{language.change}]]</span>
+          <li class="mt-2 "><span class=""><span></span>
               <select id="locales">
                 <option value=""></option>
                 <option value="en"> [[#{lang.eng}]]</option>
@@ -150,7 +155,7 @@
 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
       © 2022 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">DailyShipping.com</a>
+      <a class="text-white" href="#">DailyShipping.com</a>
     </div>
   </footer>
 

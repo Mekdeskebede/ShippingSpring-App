@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Package {
+public class Cart_Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;

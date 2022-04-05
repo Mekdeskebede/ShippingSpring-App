@@ -1,10 +1,10 @@
 package com.bootcamp.deliver.Controller;
 import java.util.List;
 import javax.validation.Valid;
-import com.bootcamp.deliver.Model.Package;
+import com.bootcamp.deliver.Model.Cart_Item;
 import com.bootcamp.deliver.Model.Product;
 import com.bootcamp.deliver.Model.User;
-import com.bootcamp.deliver.Repository.PackageRepository;
+import com.bootcamp.deliver.Repository.Cart_ItemRepository;
 import com.bootcamp.deliver.Repository.ProductRepository;
 
 import com.bootcamp.deliver.Repository.UserRepository;
@@ -27,14 +27,14 @@ public class PackageController {
     private ProductRepository productRepo;
 
     @Autowired
-    private PackageRepository packRepo;
+    private Cart_ItemRepository packRepo;
 
     @Autowired
     private UserRepository repo;
 
     @PostMapping("/addtocart/{id}")
     public String addtocart(
-            @Valid Package cart,
+            @Valid Cart_Item cart,
             @PathVariable("id") long id,
             @RequestParam("numofprod") int numofprod) {
 
@@ -55,9 +55,9 @@ public class PackageController {
 
     @GetMapping("/mycart")
     public String viewproductPage(
-        @Valid Package packages,
+        @Valid Cart_Item packages,
         Model model) {
-        List<Package> products = packRepo.findAll();
+        List<Cart_Item> products = packRepo.findAll();
         
         List<Product> product = productRepo.findAll();
 

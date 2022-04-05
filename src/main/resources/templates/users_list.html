@@ -5,28 +5,43 @@
     <title>Admin Dashboard</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
     <link rel="stylesheet" th:href="@{/css/courses.css}" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<style>
-    #navbarSupportedContent {
-        margin-left: 5em;
-    }
-</style>
-</head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-<body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img th:src="@{/images/undraw_handcrafts_planet.svg}" alt="" width="70" height="50"
-                        class="d-inline-block align-text-top" />
+    <style>
+      #navbarSupportedContent {
+        margin-left: 16em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- boot navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/product_list">
+          <img
+            th:src="@{/images/undraw_handcrafts_planet.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
                     Daily Shipping
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -58,14 +73,11 @@
                             <a class="nav-link text-dark fw-bold" aria-current="page"
                                 th:href="@{/profileAdmin}">[[#{nav.profile}]]</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" aria-current="page"
-                                th:href="@{/addwarehouse}">[[#{warehouse}]]</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark fw-bold" aria-current="page" href="/logout">[[#{nav.logout}]]</a>
                         </li>
-                        <li class="mt-2 "><span class=""><span> [[#{language.change}]]</span>
+                        <li class="mt-2 "><span class=""><span></span>
                                 <select id="locales">
                                     <option value=""></option>
                                     <option value="en"> [[#{lang.eng}]]</option>
@@ -137,7 +149,7 @@
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             © 2022 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">DailyShipping.com</a>
+            <a class="text-white" href="#">DailyShipping.com</a>
         </div>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
     </footer>

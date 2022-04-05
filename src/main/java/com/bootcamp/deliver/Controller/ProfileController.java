@@ -147,7 +147,16 @@ public String updateProduct(@PathVariable("id") long id, @RequestParam("image") 
         e.printStackTrace();
 
     }
-    return "redirect:/profile";
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String currentPrincipalName = authentication.getName();
+    User auth = repo.findByEmail(currentPrincipalName);
+    String role = (String) auth.getRole();
+    if (!role.equals("Admin")) {
+        return "redirect:/profile";
+    } else {
+        return "redirect:/profileAdmin";
+    }
+    
 }
 
 
